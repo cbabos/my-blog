@@ -4,7 +4,8 @@
   "description": "This is just a developer's blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node devserver.js compile",
+    "start": "node devserver.js serve"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,6 @@
   },
   "homepage": "https://github.com/cbabos/cbabos.yourweb.hu",
   "devDependencies": {
+    "harp": "^0.15.2"
   }
 }

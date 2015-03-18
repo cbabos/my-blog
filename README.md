@@ -4,8 +4,7 @@ cbabos.yourweb.hu
 This is the beginning of developing my personal, and work-related blog. 
 It's created using the following tools: 
  - [Node.js](http://nodejs.org/)
- - [gulp](http://gulpjs.com/)
- - [Bootstrap](http://getbootstrap.com/)
+ - [harp](http://harpjs.com/) for compiling and for serving in the develop process
 
 MVP features: 
  - posts written in markdown
