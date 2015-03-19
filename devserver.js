@@ -4,7 +4,7 @@ var harp = require('harp');
 var cp = require('child_process');
 
 var settings = {
-	source: './src/',
+	source: './public/',
 	destination: __dirname + '/www/',
 
 	runport: 9000

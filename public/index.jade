@@ -1,0 +1,21 @@
+posts = partial('_partials/posts');
+
+header.site-header
+	.container
+		.row
+			.col-xs-12
+				h1 cbabos's weblog
+
+.container
+	each post in posts
+		.row
+			.col-xs-12
+				article
+					header
+						h1 Reboot
+						p 
+							a(href="https://github.com/cbabos" target="_blank" rel="author") cbabos
+							span , at 
+							time(datetime="2015-03-17 20:56") March 17
+					p loremipsum
+
