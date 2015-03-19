@@ -17,6 +17,8 @@ switch (process.argv[2]) {
 			if (errors) {
 				console.log(errors);
 				process.exit(1);
+			} else {
+				console.log('Compile success!');	
 			}
 		});
 	break;
