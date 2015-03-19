@@ -1,0 +1,8 @@
+!= partial('../_partials/header')
+
+.container 
+  article
+    header
+      h1= title
+    - if (yield) yield = yield.replace(/<h1>.*?<\/h1>/, '');
+    != yield
