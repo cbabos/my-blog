@@ -1,19 +1,44 @@
-body{
-  font-family: "Helvetica";
-  text-align: center;
-  padding: 50px 20px 0;
-  background: #f4f4f7;
-  color: #444;
-  margin: 0;
+@import "../bower_components/bootstrap/less/bootstrap.less";
+@import "../bower_components/bootstrap/less/theme.less";
+
+html, body {
+	font-size: 100%;
+	font-family: sans-serif;
+	background-color: #efefef;
+	color: #6f6f6f;
 }
 
-h1{
-  font-size: 65px;
-  line-height: 1.2em;
-  border-bottom: #CCC solid 1px;
-  padding: 20px 0;
+.site-header {
+	background-color: #dfdfdf;
+	box-shadow: 0 0 5px #9f9f9f;
 }
-
-h3{
-  font-weight: 300;
+.site-header h1 {
+	line-height: 3em;
+	background-color: #dfdfdf;
+	background-image:
+	  radial-gradient(transparent 65%, #dfdfdf 69%),
+	  radial-gradient(transparent 60%, steelblue 65%),
+	  radial-gradient(transparent 45%, #dfdfdf 60%),
+	  url(https://secure.gravatar.com/avatar/7b58a74d67d278b74a2a460eb589fdf9?s=128);
+	background-size:  2em 2em;
+	background-repeat: no-repeat;
+	background-position: .5em center;
+	padding-left: 3em;
+	text-shadow: 1px 1px #fff;
+	margin-bottom: 2em;
+}
+article {
+	padding-left: 1em;
+	position: relative;
+	background: #fefefe;
+	box-shadow: 0 0 10px #6f6f6f;
+	padding-top: .5em;
+	margin-top: -4em;
+	margin-bottom: 6em;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: steelblue;
+}
+a, a:visited {
+	color: steelblue;
 }
