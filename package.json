@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/cbabos/cbabos.yourweb.hu",
   "devDependencies": {
-    "harp": "^0.15.2"
+    "harp": "^0.15.2",
+    "semver": "^4.3.1"
   }
 }
