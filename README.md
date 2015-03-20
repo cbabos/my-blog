@@ -12,9 +12,7 @@ It's created using the following tools:
 MVP features: 
  - posts written in markdown
  - build script to create html from markdown
- - js, css, html linter
  - css3 autoprefixer, builder
  - js builder
  - html builder
  - version bump
-
