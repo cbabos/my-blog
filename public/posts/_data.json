@@ -1,4 +1,17 @@
 {
-
+  "reboot": {
+    "title": "Reboot",
+    "date": "2014-09-05 14:55:00",
+    "published": true
+  },
+  "reboot-ii": {
+    "title": "Reboot II.",
+    "date": "2014-10-01 12:54:00",
+    "published": true
+  },
+  "after-reboot": {
+    "title": "After reboot",
+    "date": "2014-10-14 10:21:00",
+    "published": true
+  }
 }
-
