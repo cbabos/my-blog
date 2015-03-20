@@ -21,6 +21,7 @@ var uncssTask = function() {
 
 		// We have our html files, now lets load and fire uncss
 		var uncss = require('uncss');
+		var cssmin = require('cssmin');
 		var uncssOptions = {
 			uncssrc: '.uncssrc',
 			htmlroot: './www/'
@@ -32,6 +33,7 @@ var uncssTask = function() {
 				process.exit(1);
 			}
 
+			output = cssmin(output); 
 			require('fs').writeFileSync('./www/main.css', output);
 			console.log('uncss finished');
 		});
