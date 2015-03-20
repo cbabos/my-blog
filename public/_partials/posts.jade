@@ -23,5 +23,5 @@
 -		item.published = item.published || false;
 -   item.slug = slug;
 -   return item;
-- }).sort(isOlderThan).filter(checkPublished);
+- }).sort(isOlderThan).reverse().filter(checkPublished);
 -
