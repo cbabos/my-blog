@@ -9,6 +9,35 @@ var settings = {
 	runport: 9000
 };
 
+var uncssTask = function() {
+	var glob = require('glob');
+	var htmlFilePattern = './www/**/*.html';
+	
+	glob(htmlFilePattern, function(error, files) {
+		if (error) {
+			console.log("Error happened: ", error);
+			process.exit[1];
+		}
+
+		// We have our html files, now lets load and fire uncss
+		var uncss = require('uncss');
+		var uncssOptions = {
+			uncssrc: '.uncssrc',
+			htmlroot: './www/'
+		};
+
+		uncss(files, uncssOptions, function(error, output) {
+			if (error) {
+				console.log('UNCSS runtime error: ' + error);
+				process.exit(1);
+			}
+
+			require('fs').writeFileSync('./www/main.css', output);
+			console.log('uncss finished');
+		});
+	});
+};
+
 var bumpHelp = function() {
 	var text = 'To bump version you need to give the type of the change: ' +
 		'release-patch, release-minor, release-major\n\n' + 
@@ -48,7 +77,8 @@ switch (process.argv[2]) {
 				console.log(errors);
 				process.exit(1);
 			} else {
-				console.log('Compile success!');	
+				console.log('Compile success, additional tasks started!');	
+				uncssTask();
 			}
 		});
 	break;
