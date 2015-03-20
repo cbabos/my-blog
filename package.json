@@ -1,6 +1,6 @@
 {
   "name": "cbabos.yourweb.hu",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This is just a developer's blog",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/cbabos/cbabos.yourweb.hu",
   "devDependencies": {
-    "harp": "^0.15.2"
+    "harp": "^0.15.2",
+    "semver": "^4.3.1"
   }
 }
