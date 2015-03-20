@@ -9,7 +9,8 @@
     "release-patch": "node devserver.js bump patch",
     "release-minor": "node devserver.js bump minor",
     "release-major": "node devserver.js bump major",
-    "release": "node devserver.js bump"
+    "release": "node devserver.js bump",
+    "publish": "npm run build && git add www && npm run release-patch"
   },
   "repository": {
     "type": "git",
