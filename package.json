@@ -4,6 +4,7 @@
   "description": "This is just a developer's blog",
   "main": "index.js",
   "scripts": {
+    "new": "node devserver.js new",
     "build": "node devserver.js compile",
     "start": "node devserver.js serve",
     "release-patch": "node devserver.js bump patch",
@@ -32,6 +33,7 @@
     "glob": "^5.0.3",
     "harp": "^0.15.2",
     "semver": "^4.3.1",
+    "slug": "^0.8.0",
     "uncss": "^0.12.1"
   },
   "private": true

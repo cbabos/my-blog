@@ -2,11 +2,51 @@
 
 var harp = require('harp');
 var cp = require('child_process');
+var fs = require('fs');
 
 var settings = {
 	source: './public/',
 	destination: __dirname + '/www/',
 	runport: 9000
+};
+
+/**
+ * @param string
+ * @return string
+ */
+var slugify = function(whatToSlug) {
+	var slugUtil = require('slug');
+	var slug = slugUtil(whatToSlug).toLowerCase();
+	return slug;
+};
+
+/**
+ * @param {Date.object}
+ * @return string in format Y-m-d H:i:s
+ */
+var toIsoDate = function(date) {
+	var date = date.toISOString().
+		match(/(\d{4}\-\d{2}\-\d{2})T(\d{2}:\d{2}:\d{2})/);
+	
+	return date[1] + date[2];
+}
+
+var newPost = function(title) {
+	var slug = slugify(title);
+	var postData = {
+		title:     title,
+		date:      toIsoDate( new Date() ),
+		published: false
+	};
+
+	var posts = require('./public/posts/_data.json');
+	posts[slug] = postData;
+
+	fs.writeFileSync('./public/posts/_data.json', 
+		JSON.stringify(posts, null, 2));
+
+	fs.writeFileSync('./public/posts/' + slug + '.md', 
+		title + '\n===\n\nPut content here...\n');
 };
 
 var uncssTask = function() {
@@ -34,7 +74,7 @@ var uncssTask = function() {
 			}
 
 			output = cssmin(output); 
-			require('fs').writeFileSync('./www/main.css', output);
+			fs.writeFileSync('./www/main.css', output);
 			console.log('uncss finished');
 		});
 	});
@@ -65,7 +105,7 @@ switch (process.argv[2]) {
 
 		var newVersion = semver.inc(version, releaseType);
 		packageJSON.version = newVersion;
-		require('fs').writeFileSync('./package.json', 
+		fs.writeFileSync('./package.json', 
 			JSON.stringify(packageJSON, null, 2)
 		);
 
@@ -83,6 +123,15 @@ switch (process.argv[2]) {
 				uncssTask();
 			}
 		});
+	break;
+	case 'new':
+		var title = process.argv[3];
+		if (!title) {
+			console.log('You need to give a post name. Eg.: npm run new "Some fun title!"');
+			process.exit(1);
+		}
+
+		newPost(title);
 	break;
 	default: 
 	case 'serve':
