@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "node devserver.js compile",
-    "start": "node devserver.js serve"
+    "start": "node devserver.js serve",
+    "release-patch": "node devserver.js bump patch",
+    "release-minor": "node devserver.js bump minor",
+    "release-major": "node devserver.js bump major",
+    "release": "node devserver.js bump"
   },
   "repository": {
     "type": "git",

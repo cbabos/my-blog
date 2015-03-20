@@ -11,7 +11,8 @@ var settings = {
 
 var bumpHelp = function() {
 	var text = 'To bump version you need to give the type of the change: ' +
-		'patch, minor, major'; 
+		'release-patch, release-minor, release-major\n\n' + 
+		'Example: npm run release-major'; 
 	console.log(text);
 };
 
