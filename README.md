@@ -9,7 +9,7 @@ It's created using the following tools:
  - [Node.js](http://nodejs.org/)
  - [harp](http://harpjs.com/) for compiling and for serving in the develop process
 
-MVP features: 
+Main features: 
  - posts written in markdown
  - build script to create html from markdown
  - css3 autoprefixer, builder
