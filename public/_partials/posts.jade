@@ -1,0 +1,27 @@
+- var posts = public.posts._data || public.public.posts._data; 
+- var limit = limit || 0;
+- console.log(posts);
+- var checkPublished = function(item) {
+-		if (item.published) {
+-			return item;
+-		}
+-		return false;
+-	};
+- 
+- var isOlderThan = function(a,b) {
+-	  var aDate = new Date(a.date).getTime();
+-	  var bDate = new Date(b.date).getTime();
+-		if (aDate < bDate) {
+-			return -1;
+-		} else if (aDate > bDate) {
+-			return 1;
+-		}
+-	};
+-
+- return Object.keys(posts).map(function(slug) {
+-   var item = posts[slug];
+-		item.published = item.published || false;
+-   item.slug = slug;
+-   return item;
+- }).sort(isOlderThan).filter(checkPublished);
+-

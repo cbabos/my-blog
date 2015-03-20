@@ -1,10 +1,17 @@
 {
 	"first-entry": {
-		"title": "First Entry",
-		"date": "2015-03-18 19:30:00"
+		"title":		"First Entry",
+		"date":			"2015-03-18 19:30:00",
+		"published":	true
 	},
 	"second-entry": {
-		"title": "Second Entry",
-		"date": "2015-03-19 19:30:00"
+		"title":		"Second Entry",
+		"date":			"2015-03-19 19:30:00",
+		"published":	false
+	},
+	"third-entry": {
+		"title":		"Third Published Entry",
+		"date":			"2015-03-20 17:00:00",
+		"published":	true
 	}
 }

@@ -1,5 +1,6 @@
 posts = partial('_partials/posts');
 
-for article, slug in public.posts._data
-	a(href="/posts/#{ slug }")
-		h2= article.title
+article
+	for article, index in posts
+		a(href="/posts/#{ article.slug }.html")
+			h2= article.title
