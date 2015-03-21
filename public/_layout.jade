@@ -1,4 +1,9 @@
 != partial('_partials/header')
 
 .container
-	!= yield
+	.blogcontent
+		.row
+			.col-sm-6.col-md-8
+				!= yield
+			.col-sm-6.col-md-4
+				!= partial('_partials/pens')

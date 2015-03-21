@@ -1,6 +1,18 @@
 posts = partial('_partials/posts');
 
-article
-	for article, index in posts
-		a(href="/posts/#{ article.slug }.html")
-			h2= article.title
+section.bio
+	header 
+		h2 Welcome!
+	p Hello and welcome in my home on the internet. My name is Csaba Babos, a frontend developer from Hungary. On this page, you can find my publications about frontend development, and game development in Unity3D, and maybe some of my personal entries too.
+
+for article, index in posts
+	section.entry
+		header
+			a(href="/posts/#{ article.slug }.html")
+				h1= article.title
+			p
+				time(datetime="#{ article.date }") #{ article.date }
+		p Short introduction to the article
+		p.text-right
+			a.btn-link read more...
+

@@ -4,41 +4,55 @@
 html, body {
 	font-size: 100%;
 	font-family: sans-serif;
-	background-color: #efefef;
+ background: 
+  repeating-linear-gradient(45deg,
+  #efefef 5%,
+  transparent 10%,
+  #efefef 15%),    
+  repeating-linear-gradient(-45deg,
+  #efefef 5%,
+  transparent 10%,
+  #efefef 15%),
+  #fdfdfd;
+  background-size: 30px 30px;
 	color: #6f6f6f;
 }
 
 .site-header {
-	background-color: #dfdfdf;
-	box-shadow: 0 0 5px #9f9f9f;
+background: repeating-linear-gradient(45deg,
+  #afafaf 5%,
+  transparent 10%,
+  #afafaf 15%),
+  #aaa;
+  background-size: 30px 30px; 
+  box-shadow: 0 0 5px #9f9f9f;
 }
 .site-header h1 {
 	line-height: 3em;
-	background-color: #dfdfdf;
-	background-image:
-	  radial-gradient(transparent 65%, #dfdfdf 69%),
-	  radial-gradient(transparent 60%, steelblue 65%),
-	  radial-gradient(transparent 45%, #dfdfdf 60%),
-	  url('https://secure.gravatar.com/avatar/7b58a74d67d278b74a2a460eb589fdf9?s=128');
-	background-size:  2em 2em;
-	background-repeat: no-repeat;
-	background-position: .5em center;
-	padding-left: 3em;
-	text-shadow: 1px 1px #fff;
-	margin-bottom: 2em;
+	text-shadow: 1px 1px #9f9f9f;
+	padding: 0 1rem;
 }
-article {
-	padding-left: 1em;
-	position: relative;
-	background: #fefefe;
-	box-shadow: 0 0 10px #6f6f6f;
-	padding-top: .5em;
-	margin-top: -4em;
-	margin-bottom: 6em;
+.profile {
+	margin-right: 1rem;
+	border-radius: 50px;
+	border: 2px #efefef solid;
+	box-shadow: 0 0 5px #6f6f6f;
 }
+
+.blogcontent {
+  padding: 1rem;
+  background: rgba(255,255,255,0.5);
+  box-shadow: 0 0 5px #9f9f9f;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	color: steelblue;
 }
 a, a:visited {
 	color: steelblue;
 }
+
+.blogcontent section {
+	border-bottom: 1px solid #afafaf;
+}
+
