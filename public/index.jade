@@ -14,5 +14,5 @@ for article, index in posts
 				time(datetime="#{ article.date }") #{ article.date }
 		p Short introduction to the article
 		p.text-right
-			a.btn-link read more...
+			a.btn-link(href="/posts/#{ article.slug }.html") read more...
 
