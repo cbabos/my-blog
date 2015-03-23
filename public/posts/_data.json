@@ -2,17 +2,17 @@
   "reboot": {
     "title": "Reboot",
     "date": "2014-09-05 14:55:00",
-    "published": true
+    "published": false 
   },
   "reboot-ii": {
     "title": "Reboot II.",
     "date": "2014-10-01 12:54:00",
-    "published": true
+    "published": false 
   },
   "after-reboot": {
     "title": "After reboot",
     "date": "2014-10-14 10:21:00",
-    "published": true
+    "published": false 
   },
   "new-blog-new-stuff-new-roadmap": {
     "title": "New blog, new stuff, new roadmap!",
