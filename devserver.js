@@ -6,7 +6,7 @@ var fs = require('fs');
 var utils = require('./utils.js');
 
 var settings = {
-	source: './public/',
+	source: __dirname,
 	destination: __dirname + '/www/',
 	runport: 9000
 };
