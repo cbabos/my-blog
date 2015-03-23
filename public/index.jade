@@ -6,13 +6,22 @@ section.bio
 	p Hello and welcome in my home on the internet. My name is Csaba Babos, a frontend developer from Hungary. On this page, you can find my publications about frontend development, and game development in Unity3D, and maybe some of my personal entries too.
 
 for article, index in posts
+	content = partial('posts/' + article.slug);
+	- /** This is from Remy Sharp's code https://github.com/remy/remysharp.com/blob/master/public/index.jade */
+	if content.split(/<!--\s*listdesc\s*-->/).length > 1
+		description = content.split(/<!--\s*listdesc\s*-->/)[0].replace(/<h1>.*?<\/h1>/, '').trim()
+	else if content.split('<hr>').length > 1
+		description = content.split('<hr>')[0].replace(/<h1>.*?<\/h1>/, '').trim()
+	else
+		description = content.split('<p>').slice(0, 4).join('<p>').replace(/<h1>.*?<\/h1>/, '').trim()
+
 	section.entry
 		header
 			a(href="/posts/#{ article.slug }.html")
 				h1= article.title
 			p
 				time(datetime="#{ article.date }") #{ article.date }
-		p Short introduction to the article
+		p!= description
 		p.text-right
 			a.btn-link(href="/posts/#{ article.slug }.html") read more...
 
