@@ -1,0 +1,8 @@
+{
+  "globals": {
+    "site_title": "Csaba's developer paradise",
+    "site_description": "Frontend, Unity3D, portfolio. Check out!",
+    "site_url": "http://yourweb.hu",
+    "analytics": "UA-1889880-10"
+  }
+} 
