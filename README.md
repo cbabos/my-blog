@@ -1,5 +1,5 @@
-cbabos.yourweb.hu
-=================
+yourweb.hu
+==========
 
 This is the beginning of developing my personal, and work-related blog. 
 The workflow is based on the blog workflow of Remy Sharp, but I wanted an only 
@@ -16,3 +16,4 @@ Main features:
  - js builder
  - html builder
  - version bump
+

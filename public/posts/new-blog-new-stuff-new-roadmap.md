@@ -2,7 +2,7 @@ New blog, new stuff, new roadmap!
 ===
 
 Hi there! You must be new here. Why is that? Well, it's a completely new site, so first things first: please, let me introduce myself! 
-<!-- listdesc -->
+
 My name is Csaba Babos, I'm currently working as a frontend developer, but I have started my journey on the game development.
 I'm creating some educational webapps for children at work, and I really find it satisfying. However I've a childhood dream, and that is to create videogames that I would love to play. 
 
