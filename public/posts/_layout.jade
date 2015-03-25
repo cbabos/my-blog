@@ -1,3 +1,7 @@
+posts = public.posts || public.public.posts;
+post = posts._data[current.source];
+date = moment(post.date).fromNow();
+
 != partial('../_partials/header')
 
 .container
@@ -7,6 +11,9 @@
 				header
 					h1= title
 				p 
+					time(date="#{ post.date }")
+						em #{ date }	
+					br
 					a(href="/") &laquo; Back to homepage
 				- if (yield) yield = yield.replace(/<h1>.*?<\/h1>/, '');
 				!= yield

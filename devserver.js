@@ -5,6 +5,8 @@ var cp = require('child_process');
 var fs = require('fs');
 var utils = require('./utils.js');
 
+global.moment = require('moment');
+
 var settings = {
 	source: __dirname,
 	destination: __dirname + '/www/',

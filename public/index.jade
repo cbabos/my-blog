@@ -14,13 +14,15 @@ for article, index in posts
 		description = content.split('<hr>')[0].replace(/<h1>.*?<\/h1>/, '').trim()
 	else
 		description = content.split('<p>').slice(0, 4).join('<p>').replace(/<h1>.*?<\/h1>/, '').trim()
+	date = moment(article.date).fromNow();
 
 	section.entry
 		header
 			a(href="/posts/#{ article.slug }.html")
 				h1= article.title
 			p
-				time(datetime="#{ article.date }") #{ article.date }
+				time(datetime="#{ article.date }")
+					em #{ date }
 		p!= description
 		p.text-right
 			a.btn-link(href="/posts/#{ article.slug }.html") read more &raquo;
