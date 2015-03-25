@@ -1,6 +1,6 @@
 posts = public.posts || public.public.posts;
 post = posts._data[current.source];
-date = moment(post.date).fromNow();
+date = moment(post.date).format('LL');
 
 != partial('../_partials/header')
 
