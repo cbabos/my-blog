@@ -2,21 +2,26 @@
   "reboot": {
     "title": "Reboot",
     "date": "2014-09-05 14:55:00",
-    "published": false 
+    "published": false
   },
   "reboot-ii": {
     "title": "Reboot II.",
     "date": "2014-10-01 12:54:00",
-    "published": false 
+    "published": false
   },
   "after-reboot": {
     "title": "After reboot",
     "date": "2014-10-14 10:21:00",
-    "published": false 
+    "published": false
   },
   "new-blog-new-stuff-new-roadmap": {
     "title": "New blog, new stuff, new roadmap!",
     "date": "2015-03-23 16:24:31",
+    "published": true
+  },
+  "happy-easter-everyone": {
+    "title": "Happy Easter everyone!",
+    "date": "2015-04-06 07:27:04",
     "published": true 
   }
 }
