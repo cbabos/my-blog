@@ -10,7 +10,7 @@ global.moment = require('moment');
 var settings = {
 	source: __dirname,
 	destination: __dirname + '/www/',
-	runport: 9000
+	runport: 9999
 };
 
 switch (process.argv[2]) {
