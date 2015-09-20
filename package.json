@@ -1,6 +1,6 @@
 {
   "name": "cbabos.yourweb.hu",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "This is just a developer's blog",
   "main": "index.js",
   "scripts": {
