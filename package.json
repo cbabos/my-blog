@@ -1,21 +1,13 @@
 {
   "name": "cbabos.yourweb.hu",
-  "version": "1.0.10",
+  "version": "2.0.0",
   "description": "This is just a developer's blog",
   "main": "index.js",
   "scripts": {
-    "new": "node devserver.js new",
-    "build": "node devserver.js compile",
-    "start": "node devserver.js serve",
-    "release-patch": "node devserver.js bump patch",
-    "release-minor": "node devserver.js bump minor",
-    "release-major": "node devserver.js bump major",
-    "release": "node devserver.js bump",
-    "publish": "npm run build && git add www && npm run release-patch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cbabos/cbabos.yourweb.hu.git"
+    "url": "https://github.com/cbabos/my-blog.git"
   },
   "keywords": [
     "blog",
@@ -25,17 +17,10 @@
   "author": "cbabos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cbabos/cbabos.yourweb.hu/issues"
+    "url": "https://github.com/cbabos/my-blog/issues"
   },
-  "homepage": "https://github.com/cbabos/cbabos.yourweb.hu",
+  "homepage": "http://yourweb.hu",
   "devDependencies": {
-    "cssmin": "^0.4.3",
-    "glob": "^5.0.3",
-    "harp": "^0.15.2",
-    "moment": "^2.9.0",
-    "semver": "^4.3.1",
-    "slug": "^0.8.0",
-    "uncss": "^0.12.1"
   },
   "private": true
 }
