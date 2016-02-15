@@ -1,8 +1,20 @@
 'use strict';
 
+import moment from 'moment';
+
 let posts = require('../public/posts.json'); 
 let getPost, getPosts, findPost, addPost, delPost, 
-		isMatching, isInStr;
+		isMatching, isInStr, deepCopy;
+
+addPost = (postData) => {
+	posts.push(Object.assign(postData, {
+		slug: 'test-post',
+		date: moment().format('Y-M-D hh:mm:ss'),
+		published: false 
+	}));
+
+	return posts;
+};
 
 /** 
  * @param String what
@@ -30,13 +42,7 @@ isMatching = (post, identifier) => {
 getPosts = (identifier) => {
 	identifier = identifier || '';
 
-	const slug = Object.keys(posts)
-		.filter(current => isMatching(
-					Object.assign(posts[current], {slug: current}), 
-					identifier) 
-				);
-
-	return slug ? slug.map(currentSlug => posts[currentSlug]) : false;
+	return posts.filter(post => isMatching(post, identifier));
 };
 
 /**
@@ -49,17 +55,19 @@ getPost = (identifier) => {
 	return posts ? posts[0] : false;
 };
 
+deepCopy = src => JSON.parse(JSON.stringify(src));
+
 /** 
  * @param [{title: String, date: String, published: Boolean}, ...] givenPosts
  * @return {}
  */
 module.exports = (givenPosts) => {
-	posts = givenPosts || posts || {};
+	posts = deepCopy(givenPosts) || posts || {};
 
 	return {
 		"getPost": getPost,
 		"getPosts": getPosts,
-		"addPost": addPost,
+		"add": addPost,
 		"delPost": delPost
 	};
 };
