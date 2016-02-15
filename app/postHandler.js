@@ -61,5 +61,5 @@ module.exports = (givenPosts) => {
 		"getPosts": getPosts,
 		"addPost": addPost,
 		"delPost": delPost
-	}
+	};
 };
