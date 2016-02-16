@@ -10,6 +10,10 @@ let posts = require('../public/posts.json');
 let getPost, getPosts, findPost, addPost, delPost, 
 		isMatching, createPostFile;
 
+/**
+ * @param String identifier
+ * @return [{Post}, ...] 
+ */
 delPost = (identifier) => {
 	const post = getPost(identifier);
 	
@@ -23,12 +27,19 @@ delPost = (identifier) => {
 	return posts; 
 }
 
+/**
+ * @param {Post}
+ */
 createPostFile = (post) => {
 	fs.writeFileSync('./public/posts/' + post.slug + '.md', 
 		postTemplate.replace(/%title%/, post.title)
 	);	
 };
 
+/**
+ * @param {title: String}
+ * @return [{Post}, ...] 
+ */
 addPost = (postData) => {
 	Object.assign(postData, {
 		slug: utils.getSlug(postData.title),
@@ -43,7 +54,7 @@ addPost = (postData) => {
 };
 
 /** 
- * @param {title: String, date: String, published: Boolean} post
+ * @param {Post} post
  * @param String identifier
  * @return Boolean
  */
@@ -54,7 +65,7 @@ isMatching = (post, identifier) => {
 
 /**
  * @param String identifier
- * @return [{title: String, date: String, published: Boolean}, ...]
+ * @return [{Post}, ...]
  */
 getPosts = (identifier) => {
 	identifier = identifier || '';
@@ -64,7 +75,7 @@ getPosts = (identifier) => {
 
 /**
  * @param String identifier
- * @return {title: String, date: String, published: Boolean}
+ * @return {Post}
  */
 getPost = (identifier) => {
 	const posts = getPosts(identifier);
@@ -73,7 +84,7 @@ getPost = (identifier) => {
 };
 
 /** 
- * @param [{title: String, date: String, published: Boolean}, ...] givenPosts
+ * @param [{Post}, ...] givenPosts
  * @return {}
  */
 module.exports = (givenPosts) => {
