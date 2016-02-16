@@ -1,17 +1,20 @@
-{
-	"sample-post": {
+[
+	{
+		"slug": "sample-post",
 		"title": "Sample Post",
 		"date": "2015-10-11 23:52:00",
 		"published": true
 	},
-	"some-forgotten-post": {
+	{
+		"slug": "some-forgotten-post",
 		"title": "Some forgotten post",
 		"date": "2015-10-21 16:52:00",
 		"published": false 
 	},
-	"other-post": {
+	{
+		"slug": "other-post",
 		"title": "Other Post",
 		"date": "2015-11-11 23:52:00",
 		"published": true
 	}
-}
+]
