@@ -1,47 +1,81 @@
 'use strict';
 
+import moment from 'moment';
+import fs from 'fs';
+import utils from './utils';
+
+const postTemplate = '%title%\n===\n\nContent is under upload...\n';
+
 let posts = require('../public/posts.json'); 
 let getPost, getPosts, findPost, addPost, delPost, 
-		isMatching, isInStr;
+		isMatching, createPostFile;
 
-/** 
- * @param String what
- * @param String where
- * @return Boolean
+/**
+ * @param String identifier
+ * @return [{Post}, ...] 
  */
-isInStr = (what, where) => {
-	return where.toLowerCase().indexOf(what.toLowerCase()) !== -1;
+delPost = (identifier) => {
+	const post = getPost(identifier);
+	
+	try {
+		fs.unlink('./public/posts/' + post.slug + '.md');
+		posts = posts.filter(current => current.slug !== post.slug);
+	} catch (e) {
+		console.log("Error occured deleting post. \n", e);	
+	}
+
+	return posts; 
 }
 
+/**
+ * @param {Post}
+ */
+createPostFile = (post) => {
+	fs.writeFileSync('./public/posts/' + post.slug + '.md', 
+		postTemplate.replace(/%title%/, post.title)
+	);	
+};
+
+/**
+ * @param {title: String}
+ * @return [{Post}, ...] 
+ */
+addPost = (postData) => {
+	Object.assign(postData, {
+		slug: utils.getSlug(postData.title),
+		date: moment().format('Y-M-D hh:mm:ss'),
+		published: false 
+	});
+
+	createPostFile(postData);
+	posts.push(postData);
+
+	return posts;
+};
+
 /** 
- * @param {title: String, date: String, published: Boolean} post
+ * @param {Post} post
  * @param String identifier
  * @return Boolean
  */
 isMatching = (post, identifier) => {
 	return Object.keys(post)
-		.some(field => isInStr(identifier, post[field].toString()));
+		.some(field => utils.isInStr(identifier, post[field].toString()));
 }
 
 /**
  * @param String identifier
- * @return [{title: String, date: String, published: Boolean}, ...]
+ * @return [{Post}, ...]
  */
 getPosts = (identifier) => {
 	identifier = identifier || '';
 
-	const slug = Object.keys(posts)
-		.filter(current => isMatching(
-					Object.assign(posts[current], {slug: current}), 
-					identifier) 
-				);
-
-	return slug ? slug.map(currentSlug => posts[currentSlug]) : false;
+	return posts.filter(post => isMatching(post, identifier));
 };
 
 /**
  * @param String identifier
- * @return {title: String, date: String, published: Boolean}
+ * @return {Post}
  */
 getPost = (identifier) => {
 	const posts = getPosts(identifier);
@@ -50,16 +84,16 @@ getPost = (identifier) => {
 };
 
 /** 
- * @param [{title: String, date: String, published: Boolean}, ...] givenPosts
+ * @param [{Post}, ...] givenPosts
  * @return {}
  */
 module.exports = (givenPosts) => {
-	posts = givenPosts || posts || {};
+	posts = utils.deepCopy(givenPosts) || posts || {};
 
 	return {
 		"getPost": getPost,
 		"getPosts": getPosts,
-		"addPost": addPost,
-		"delPost": delPost
+		"add": addPost,
+		"delete": delPost
 	};
 };

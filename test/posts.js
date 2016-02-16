@@ -40,16 +40,6 @@ describe('Querying posts', () => {
     assert.equal(resultedPosts.length, samplePosts.length + 1);
   });
 
-  it('should create the correct slug for the slugTest post', () => {
-    loadSamplePosts();
-    const handler = postHandler(samplePosts);
-
-    handler.add(slugTest);
-
-    const post = handler.getPost('success');
-    assert.equal(post.slug, '140.5-percent-success');	
-  });
-
   it('should create and delete the .md file for the post', () => {
     loadSamplePosts();
     const handler = postHandler(samplePosts);
@@ -58,13 +48,26 @@ describe('Querying posts', () => {
     handler.add(testPost);
 
     try {
-      fs.accessSync('../public/posts/test-post.md');
+      fs.accessSync('./public/posts/test-post.md');
       handler.delete(testPost.title);
     } catch (e) {
       error = e;		
     }
 
-    assert.equals(error, false);
-    assert.equals(handler.getPosts().length, samplePosts.length);
+    assert.equal(error, false);
+    assert.equal(handler.getPosts().length, samplePosts.length);
   });
+
+  it('should create the correct slug for the slugTest post', () => {
+    loadSamplePosts();
+    const handler = postHandler(samplePosts);
+
+    handler.add(slugTest);
+
+    const post = handler.getPost('success');
+    assert.equal(post.slug, '140.5-percent-success-this-is-awesome');	
+
+		handler.delete(slugTest.title);
+  });
+
 })
