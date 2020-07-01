@@ -29,3 +29,13 @@ jobs:
     - run: yarn
     - run: yarn build
     - run: ls -lah build/
+    - name: Deploy to Server
+      uses: easingthemes/ssh-deploy@v2.1.1
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          ARGS: "-rltgoDzvO --delete"
+          SOURCE: "dist/"
+          REMOTE_PORT: ${{ secrets.PORT }}
+          REMOTE_HOST: ${{ secrets.HOST }}
+          REMOTE_USER: ${{ secrets.USER }}
+          TARGET: ${{ secrets.TARGET }}
