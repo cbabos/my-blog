@@ -28,6 +28,7 @@ jobs:
       uses: CultureHQ/actions-yarn@v1.0.1
     - run: yarn
     - run: yarn build
+    - run: cp -R .well-known build/
     - run: ls -lah build/
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@v2.1.1
