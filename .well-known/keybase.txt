@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/cbabos
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://yourweb.hu
+  * I am cbabos (https://keybase.io/cbabos) on keybase.
+  * I have a public key ASCbfNQvTWxXUbmzaaUvcxa3dKybNMGJm6JL9P4J1PS9fQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101eddc9b17607811aefc97a03d975d9525d586401abbca16e2a0178e1bd257b9e80a",
+      "host": "keybase.io",
+      "kid": "01209b7cd42f4d6c5751b9b369a52f7316b774ac9b34c1899ba24bf4fe09d4f4bd7d0a",
+      "uid": "1a6d052fd7752f33dd7b261abbc5f419",
+      "username": "cbabos"
+    },
+    "merkle_root": {
+      "ctime": 1593864960,
+      "hash": "61acb76c2d673ff7fa3e7419841c829468b48b9f1effd262c8b143f11639d388a173a40bd9c2bb4bbea703875bb57d7de31e593168e6b4e9cf43ef53b0b6ae2e",
+      "hash_meta": "6ff7deb3cba8c400c1d05fc0be9a5337de9314605203c68940f6fa00db68f6b5",
+      "seqno": 16864833
+    },
+    "service": {
+      "entropy": "+6UgzuYTbU1rzgCxLHOwViq/",
+      "hostname": "yourweb.hu",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.5.0"
+  },
+  "ctime": 1593864990,
+  "expire_in": 504576000,
+  "prev": "8ad5fadd2104033ba137eda2eac862642621d469104d2c6cf19068af677bae55",
+  "seqno": 17,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgm3zUL01sV1G5s2mlL3MWt3SsmzTBiZuiS/T+CdT0vX0Kp3BheWxvYWTESpcCEcQgitX63SEEAzuhN+2i6shiZCYh1GkQTSxs8ZBor2d7rlXEIAyUnlqRcLfNt92NISoW2dvi6Hvj0/f2F9cHRp49M5hRAgHCo3NpZ8RAVgkOTTtf/deUd9/MVOeqtlIVuvb4pYCzRnjHV0IfPUYunZOixATJzbI6xemx03oBdjHjJKcRHf0zYFaNxQKoCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIG9f95X0VNAvaquWYQaROYtc0NhVjUQpmo4TI8mUK0/ao3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/cbabos
+
+==================================================================
